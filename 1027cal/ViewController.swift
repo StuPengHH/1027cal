@@ -76,6 +76,12 @@ class ViewController: UIViewController {
         temp = Double(a.text!)!
         a.text=""
     }
+    @IBAction func AC(_ sender: Any) {
+        a.text=""
+    }
+    @IBAction func point(_ sender: Any) {
+        a.text = a.text! + "."
+    }
     @IBAction func Bresult(_ sender: Any) {
         if str == 1{
             temp = temp + Double(a.text!)!
