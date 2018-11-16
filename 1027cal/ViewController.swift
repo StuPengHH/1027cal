@@ -11,16 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     var str = 0
     var temp = 0.0
-    var cnt=0
-    var n=0
+    var cnt=1
+    var n=1
     var x:Int = 0
     @IBOutlet weak var a: UITextField!
     
     @IBAction func B1(_ sender: Any) {
-        a.text = a.text! + "1"
+        a.text = a.text!+"1"
         if cnt == 1 {
             a.text=""
-            a.text = a.text! + "1"
+            a.text = a.text!+"1"
             cnt=0
         }
     }
@@ -101,17 +101,15 @@ class ViewController: UIViewController {
         a.text = a.text! + "0"
         if cnt == 0 {
             a.text=""
-            a.text = a.text! + "1"
-            cnt=0
+            a.text = a.text! + "0"
+            cnt=1
         }
     }
 
     @IBAction func Badd(_ sender: Any) {
         str = 1
-        temp = Double(a.text!)!
-        temp += Double(a.text!)!
+        temp = temp + Double(a.text!)!
         a.text=""
-        
     }
     
     @IBAction func Bre(_ sender: Any) {
@@ -133,6 +131,7 @@ class ViewController: UIViewController {
     }
     @IBAction func AC(_ sender: Any) {
         a.text=""
+        temp=0
     }
     @IBAction func point(_ sender: Any) {
         a.text = a.text! + "."
@@ -166,6 +165,7 @@ class ViewController: UIViewController {
         if str==1||str==2||str==3||str==4 {
             cnt=1
         }
+        
     }
     
     @IBAction func Bac(_ sender: Any) {
@@ -174,7 +174,5 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
 
