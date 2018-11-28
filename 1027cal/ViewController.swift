@@ -193,10 +193,10 @@ class ViewController: UIViewController {
             a.text = "\(temp)"
         }
         s = b.text!
-        for i in 0 ..< s.count{
-            /*if ( s[i] == "*" || s[i]=="/" ){
+        for index in s.indices{
+            if ( s[index] == "*" || s[index] == "/" ){
                 
-            }*/
+            }
         }
     }
     
