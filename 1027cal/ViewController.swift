@@ -11,15 +11,17 @@ import UIKit
 class ViewController: UIViewController {
     var str = 0
     var temp = 0.0
-    var n=0
+    //var n=0
     var t=0.0
     var x = 0
-    var s = "hello"
+    var s = [String]()
+    var tb=0.0
     @IBOutlet weak var a: UITextField!
     @IBOutlet weak var b: UITextField!
     
     @IBAction func B1(_ sender: Any) {
         b.text = b.text!+"1"
+        
         a.text = a.text!+"1"
         if Double(a.text!)! != 0.0{
             a.text=""
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func B2(_ sender: Any) {
         b.text = b.text!+"2"
+        
         a.text = a.text!+"2"
         if Double(a.text!)! != 0.0 {
             a.text=""
@@ -38,6 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func B3(_ sender: Any) {
         b.text = b.text!+"3"
+        
         a.text = a.text!+"3"
         if Double(a.text!)! != 0.0 {
             a.text=""
@@ -110,6 +114,7 @@ class ViewController: UIViewController {
     @IBAction func Badd(_ sender: Any) {
         b.text = b.text!+"+"
         str = 1
+        var n=0
         if n == 0 {
             temp = Double(a.text!)!
             n = n + 1
@@ -124,12 +129,13 @@ class ViewController: UIViewController {
     @IBAction func Bre(_ sender: Any) {
         b.text = b.text!+"-"
         str = 2
-        //var n=0
+        
+        var n=0
         if n == 0{
             temp = Double(a.text!)!
             n=n+1
         }
-        else{
+        while (n==1){
             temp = temp - Double(a.text!)!
             a.text=""
             a.text = "\(temp)"
@@ -138,12 +144,13 @@ class ViewController: UIViewController {
     @IBAction func mul(_ sender: Any) {
         b.text = b.text!+"*"
         str = 3
+        var n=0
         if n == 0
         {
             temp = Double(a.text!)!
             n=n+1
         }
-        else
+        while (n==1)
         {
             temp = temp * Double(a.text!)!
             a.text=""
@@ -152,13 +159,14 @@ class ViewController: UIViewController {
     }
     @IBAction func di(_ sender: Any) {
         b.text = b.text!+"/"
+        var n=0
         str = 4
         if n == 0
         {
             temp = Double(a.text!)!
             n=n+1
         }
-        else
+        while(n==1)
         {
             temp = temp / Double(a.text!)!
             a.text=""
@@ -167,8 +175,10 @@ class ViewController: UIViewController {
     }
     @IBAction func AC(_ sender: Any) {
         a.text=""
-        n = 0
+        b.text=""
+        //n = 0
         temp=0
+        
     }
     @IBAction func point(_ sender: Any) {
         a.text = a.text! + "."
@@ -192,12 +202,17 @@ class ViewController: UIViewController {
             temp = temp / Double(a.text!)!
             a.text = "\(temp)"
         }
-        s = b.text!
-        for index in s.indices{
-            if ( s[index] == "*" || s[index] == "/" ){
+        /*for item in s.enumerated(){
+            let a = "*"
+            if ( item == a){
+                
+                
                 
             }
-        }
+            else if (item == "/"){
+                
+            }
+        }*/
     }
     
     @IBAction func Bac(_ sender: Any) {
