@@ -11,29 +11,27 @@ import UIKit
 class ViewController: UIViewController {
     var str = 0
     var temp = 0.0
-    //var n=0
+    var n=0
+    var m=0
+    var x=0
+    var y=0
     var t=0.0
-    var x = 0
     var s = [String]()
     var tb=0.0
     @IBOutlet weak var a: UITextField!
     @IBOutlet weak var b: UITextField!
     
     @IBAction func B1(_ sender: Any) {
-        b.text = b.text!+"1"
-        
         a.text = a.text!+"1"
-        if Double(a.text!)! != 0.0{
-            a.text=""
-            a.text = a.text!+"1"
-        }
+        b.text = b.text!+"1"
     }
     
     @IBAction func B2(_ sender: Any) {
         b.text = b.text!+"2"
-        
-        a.text = a.text!+"2"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"2"
+        }
+        else {
             a.text=""
             a.text = a.text!+"2"
         }
@@ -41,9 +39,10 @@ class ViewController: UIViewController {
     
     @IBAction func B3(_ sender: Any) {
         b.text = b.text!+"3"
-        
-        a.text = a.text!+"3"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"3"
+        }
+        else {
             a.text=""
             a.text = a.text!+"3"
         }
@@ -51,8 +50,10 @@ class ViewController: UIViewController {
     
     @IBAction func B4(_ sender: Any) {
         b.text = b.text!+"4"
-        a.text = a.text!+"4"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"4"
+        }
+        else {
             a.text=""
             a.text = a.text!+"4"
         }
@@ -60,16 +61,20 @@ class ViewController: UIViewController {
     
     @IBAction func B5(_ sender: Any) {
         b.text = b.text!+"5"
-        a.text = a.text!+"5"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"5"
+        }
+        else {
             a.text=""
             a.text = a.text!+"5"
         }
     }
     @IBAction func B6(_ sender: Any) {
         b.text = b.text!+"6"
-        a.text = a.text!+"6"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"6"
+        }
+        else {
             a.text=""
             a.text = a.text!+"6"
         }
@@ -77,8 +82,10 @@ class ViewController: UIViewController {
     
     @IBAction func B7(_ sender: Any) {
         b.text = b.text!+"7"
-        a.text = a.text!+"7"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"7"
+        }
+        else {
             a.text=""
             a.text = a.text!+"7"
         }
@@ -86,8 +93,10 @@ class ViewController: UIViewController {
     
     @IBAction func B8(_ sender: Any) {
         b.text = b.text!+"8"
-        a.text = a.text!+"8"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"8"
+        }
+        else {
             a.text=""
             a.text = a.text!+"8"
         }
@@ -95,8 +104,10 @@ class ViewController: UIViewController {
     
     @IBAction func B9(_ sender: Any) {
         b.text = b.text!+"9"
-        a.text = a.text!+"9"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"9"
+        }
+        else {
             a.text=""
             a.text = a.text!+"9"
         }
@@ -104,8 +115,10 @@ class ViewController: UIViewController {
     
     @IBAction func B0(_ sender: Any) {
         b.text = b.text!+"0"
-        a.text = a.text!+"0"
-        if Double(a.text!)! != 0.0 {
+        if n==0{
+            a.text = a.text!+"0"
+        }
+        else {
             a.text=""
             a.text = a.text!+"0"
         }
@@ -114,10 +127,10 @@ class ViewController: UIViewController {
     @IBAction func Badd(_ sender: Any) {
         b.text = b.text!+"+"
         str = 1
-        var n=0
         if n == 0 {
             temp = Double(a.text!)!
             n = n + 1
+            a.text = ""
         }
         else {
             temp = temp + Double(a.text!)!
@@ -129,13 +142,12 @@ class ViewController: UIViewController {
     @IBAction func Bre(_ sender: Any) {
         b.text = b.text!+"-"
         str = 2
-        
-        var n=0
-        if n == 0{
+        if m == 0{
             temp = Double(a.text!)!
-            n=n+1
+            m=m+1
+            a.text = ""
         }
-        while (n==1){
+        else {
             temp = temp - Double(a.text!)!
             a.text=""
             a.text = "\(temp)"
@@ -144,13 +156,13 @@ class ViewController: UIViewController {
     @IBAction func mul(_ sender: Any) {
         b.text = b.text!+"*"
         str = 3
-        var n=0
-        if n == 0
+        if x == 0
         {
             temp = Double(a.text!)!
-            n=n+1
+            x=x+1
+            a.text = ""
         }
-        while (n==1)
+        else
         {
             temp = temp * Double(a.text!)!
             a.text=""
@@ -159,15 +171,14 @@ class ViewController: UIViewController {
     }
     @IBAction func di(_ sender: Any) {
         b.text = b.text!+"/"
-        var n=0
         str = 4
-        if n == 0
+        if y == 0
         {
             temp = Double(a.text!)!
-            n=n+1
+            y=y+1
+            a.text = ""
         }
-        while(n==1)
-        {
+        else {
             temp = temp / Double(a.text!)!
             a.text=""
             a.text = "\(temp)"
@@ -176,9 +187,11 @@ class ViewController: UIViewController {
     @IBAction func AC(_ sender: Any) {
         a.text=""
         b.text=""
-        //n = 0
         temp=0
-        
+        n=0
+        m=0
+        x=0
+        y=0
     }
     @IBAction func point(_ sender: Any) {
         a.text = a.text! + "."
