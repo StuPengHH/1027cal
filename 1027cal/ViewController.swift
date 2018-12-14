@@ -11,25 +11,40 @@ import UIKit
 class ViewController: UIViewController {
     var str = 0
     var temp = 0.0
+    var temp1 = 0.0
+    var temp2=0.0
+    var temp3=0.0
+    var t=0
     var n=0
     var m=0
     var x=0
     var y=0
-    var t=0.0
-    var s = [String]()
+    var w=0
+    var w1=0
+    var w2=0
+    var w3=0
     var tb=0.0
     @IBOutlet weak var a: UITextField!
     @IBOutlet weak var b: UITextField!
     
     @IBAction func B1(_ sender: Any) {
-        a.text = a.text!+"1"
+        if n==0&&m==0&&x==0&&y==0{
+            a.text = a.text!+"1"
+        }
+        else {
+            a.text=""
+            a.text = a.text!+"1"
+        }
+        //a.text = a.text!+"1"
         b.text = b.text!+"1"
     }
     
     @IBAction func B2(_ sender: Any) {
         b.text = b.text!+"2"
-        if n==0{
+        //a.text = a.text!+"2"
+        if t==0{
             a.text = a.text!+"2"
+            t=1
         }
         else {
             a.text=""
@@ -39,8 +54,9 @@ class ViewController: UIViewController {
     
     @IBAction func B3(_ sender: Any) {
         b.text = b.text!+"3"
-        if n==0{
+        if t==0{
             a.text = a.text!+"3"
+            t=1
         }
         else {
             a.text=""
@@ -50,8 +66,9 @@ class ViewController: UIViewController {
     
     @IBAction func B4(_ sender: Any) {
         b.text = b.text!+"4"
-        if n==0{
+        if t==0{
             a.text = a.text!+"4"
+            t=1
         }
         else {
             a.text=""
@@ -61,7 +78,7 @@ class ViewController: UIViewController {
     
     @IBAction func B5(_ sender: Any) {
         b.text = b.text!+"5"
-        if n==0{
+        if n==0&&m==0&&x==0&&y==0{
             a.text = a.text!+"5"
         }
         else {
@@ -71,7 +88,7 @@ class ViewController: UIViewController {
     }
     @IBAction func B6(_ sender: Any) {
         b.text = b.text!+"6"
-        if n==0{
+        if n==0&&m==0&&x==0&&y==0{
             a.text = a.text!+"6"
         }
         else {
@@ -82,7 +99,7 @@ class ViewController: UIViewController {
     
     @IBAction func B7(_ sender: Any) {
         b.text = b.text!+"7"
-        if n==0{
+        if n==0&&m==0&&x==0&&y==0{
             a.text = a.text!+"7"
         }
         else {
@@ -93,7 +110,7 @@ class ViewController: UIViewController {
     
     @IBAction func B8(_ sender: Any) {
         b.text = b.text!+"8"
-        if n==0{
+        if n==0&&m==0&&x==0&&y==0{
             a.text = a.text!+"8"
         }
         else {
@@ -104,7 +121,7 @@ class ViewController: UIViewController {
     
     @IBAction func B9(_ sender: Any) {
         b.text = b.text!+"9"
-        if n==0{
+        if n==0&&m==0&&x==0&&y==0{
             a.text = a.text!+"9"
         }
         else {
@@ -115,7 +132,7 @@ class ViewController: UIViewController {
     
     @IBAction func B0(_ sender: Any) {
         b.text = b.text!+"0"
-        if n==0{
+        if n==0&&m==0&&x==0&&y==0{
             a.text = a.text!+"0"
         }
         else {
@@ -130,104 +147,110 @@ class ViewController: UIViewController {
         if n == 0 {
             temp = Double(a.text!)!
             n = n + 1
+            w=1
             a.text = ""
         }
-        else {
+        else if (n==1&&w==1)||m==1{
             temp = temp + Double(a.text!)!
             a.text=""
             a.text = "\(temp)"
         }
     }
-    
     @IBAction func Bre(_ sender: Any) {
         b.text = b.text!+"-"
         str = 2
         if m == 0{
-            temp = Double(a.text!)!
+            temp1 = Double(a.text!)!
             m=m+1
+            w1=1
             a.text = ""
         }
-        else {
-            temp = temp - Double(a.text!)!
+        else if (m==1&&w1==1)||n==1{
+            temp1 = temp1 - Double(a.text!)!
             a.text=""
-            a.text = "\(temp)"
+            //a.text = "\(temp1)"
         }
     }
     @IBAction func mul(_ sender: Any) {
         b.text = b.text!+"*"
+        /*if str==2{
+            
+        }*/
+        if str==4{
+            temp3=temp3/Double(a.text!)!
+        }
         str = 3
         if x == 0
         {
-            temp = Double(a.text!)!
+            temp2 = Double(a.text!)!
             x=x+1
+            w2=1
             a.text = ""
         }
-        else
-        {
-            temp = temp * Double(a.text!)!
+        else if (x==1&&w2==1)||y==1{
+            temp2 = temp2 * Double(a.text!)!
             a.text=""
-            a.text = "\(temp)"
+            //a.text = "\(temp)"
         }
     }
     @IBAction func di(_ sender: Any) {
         b.text = b.text!+"/"
+        if str==3{
+            temp2=temp2*Double(a.text!)!
+        }
         str = 4
+        w3=0
         if y == 0
         {
-            temp = Double(a.text!)!
+            temp3 = Double(a.text!)!
             y=y+1
+            w3=1
             a.text = ""
         }
-        else {
-            temp = temp / Double(a.text!)!
+        else if (w3==3&&y==1)||x==1{
+            temp3 = temp3 / Double(a.text!)!
             a.text=""
-            a.text = "\(temp)"
+            //a.text = "\(temp)"
         }
     }
     @IBAction func AC(_ sender: Any) {
         a.text=""
         b.text=""
         temp=0
+        temp1=0
+        temp2=0
+        temp3=0
         n=0
         m=0
         x=0
         y=0
+        w=0
+        w1=0
+        w2=0
+        w3=0
     }
     @IBAction func point(_ sender: Any) {
         a.text = a.text! + "."
     }
     @IBAction func Bresult(_ sender: Any) {
         if str == 1{
-            temp = temp + Double(a.text!)!
+            temp = temp1+temp2+temp3+temp + Double(a.text!)!
             a.text = "\(temp)"
         }
         if str == 2{
-            temp = temp - Double(a.text!)!
-            a.text = "\(temp)"
+            temp1 = temp3 + temp2 + temp + temp1 - Double(a.text!)!
+            a.text = "\(temp1)"
 
         }
         if str == 3{
-            temp = temp * Double(a.text!)!
-            a.text = "\(temp)"
-
+            temp2 = temp + temp1 + temp3 + temp2 * Double(a.text!)!
+            a.text = "\(temp2)"
         }
         if str == 4{
-            temp = temp / Double(a.text!)!
-            a.text = "\(temp)"
+            temp3 = temp + temp2 + temp1 + temp3 / Double(a.text!)!
+            a.text = "\(temp3)"
         }
-        /*for item in s.enumerated(){
-            let a = "*"
-            if ( item == a){
-                
-                
-                
-            }
-            else if (item == "/"){
-                
-            }
-        }*/
     }
-    
     @IBAction func Bac(_ sender: Any) {
     }
     override func viewDidLoad() {
