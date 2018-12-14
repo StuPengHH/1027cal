@@ -150,7 +150,7 @@ class ViewController: UIViewController {
             w=1
             a.text = ""
         }
-        else if (n==1&&w==1)||m==1{
+        else if n==1||m==1{
             temp = temp + Double(a.text!)!
             a.text=""
             a.text = "\(temp)"
@@ -165,7 +165,7 @@ class ViewController: UIViewController {
             w1=1
             a.text = ""
         }
-        else if (m==1&&w1==1)||n==1{
+        else if m==1||n==1{
             temp1 = temp1 - Double(a.text!)!
             a.text=""
             //a.text = "\(temp1)"
@@ -173,11 +173,8 @@ class ViewController: UIViewController {
     }
     @IBAction func mul(_ sender: Any) {
         b.text = b.text!+"*"
-        /*if str==2{
-            
-        }*/
-        if str==4{
-            temp3=temp3/Double(a.text!)!
+        if str==3{
+            temp2=temp3*Double(a.text!)!
         }
         str = 3
         if x == 0
@@ -187,7 +184,7 @@ class ViewController: UIViewController {
             w2=1
             a.text = ""
         }
-        else if (x==1&&w2==1)||y==1{
+        else if x==1||y==1{
             temp2 = temp2 * Double(a.text!)!
             a.text=""
             //a.text = "\(temp)"
@@ -196,7 +193,7 @@ class ViewController: UIViewController {
     @IBAction func di(_ sender: Any) {
         b.text = b.text!+"/"
         if str==3{
-            temp2=temp2*Double(a.text!)!
+            temp3=temp2*Double(a.text!)!
         }
         str = 4
         w3=0
@@ -207,7 +204,7 @@ class ViewController: UIViewController {
             w3=1
             a.text = ""
         }
-        else if (w3==3&&y==1)||x==1{
+        else if y==1||x==1{
             temp3 = temp3 / Double(a.text!)!
             a.text=""
             //a.text = "\(temp)"
